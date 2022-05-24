@@ -1,3 +1,5 @@
+# Cities with Nice Weather v2.0
+
 I recently came accross this blog article ["Cities with Nice Weather"](https://jdonland.github.io/city_temperatures/index.html) by ***Jesse Onland***.
 
 He explains his approach on how to find the best cities for him to live in, in terms of climate.
@@ -704,7 +706,7 @@ plt.show()
 
 
     
-![png](README_files/README_38_0.png)
+![png](README_files/README_39_0.png)
     
 
 
@@ -720,7 +722,7 @@ plt.show()
 
 
     
-![png](README_files/README_41_0.png)
+![png](README_files/README_42_0.png)
     
 
 
@@ -1023,7 +1025,7 @@ plt.show()
 
 
     
-![png](README_files/README_53_0.png)
+![png](README_files/README_54_0.png)
     
 
 
@@ -1115,7 +1117,7 @@ plt.show()
 
 
     
-![png](README_files/README_64_0.png)
+![png](README_files/README_65_0.png)
     
 
 
@@ -1123,7 +1125,7 @@ Out of curiosity, get the extreme values in temperature:
 
 
 ```python
-df.query("Tmean == Tmean.max() or Tmean == Tmean.min()")
+df.query("Tmean == Tmean.max() or Tmean == Tmean.min()")[["ASCII Name", "Country name EN", "Tmean", "Tstd"]]
 ```
 
 
@@ -1135,46 +1137,25 @@ df.query("Tmean == Tmean.max() or Tmean == Tmean.min()")
     <tr style="text-align: right;">
       <th></th>
       <th>ASCII Name</th>
-      <th>Country Code</th>
       <th>Country name EN</th>
-      <th>population</th>
-      <th>lat</th>
-      <th>lng</th>
-      <th>Continent Code</th>
       <th>Tmean</th>
       <th>Tstd</th>
-      <th>Tmax</th>
-      <th>Trange</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>37323</th>
       <td>Mecca</td>
-      <td>SA</td>
       <td>Saudi Arabia</td>
-      <td>1323624</td>
-      <td>21.42664</td>
-      <td>39.82563</td>
-      <td>AS</td>
       <td>38.683333</td>
       <td>4.705864</td>
-      <td>43.9</td>
-      <td>12.6</td>
     </tr>
     <tr>
       <th>49692</th>
       <td>Yakutsk</td>
-      <td>RU</td>
       <td>Russian Federation</td>
-      <td>235600</td>
-      <td>62.03389</td>
-      <td>129.73306</td>
-      <td>EU</td>
       <td>-2.883333</td>
       <td>22.694887</td>
-      <td>25.8</td>
-      <td>60.2</td>
     </tr>
   </tbody>
 </table>
@@ -1186,7 +1167,7 @@ Cities with the most stable/unstable temperatures over a year:
 
 
 ```python
-df.query("Tstd == Tstd.min() or Tstd == Tstd.max()").sort_values(by=["Tstd"])
+df.query("Tstd == Tstd.min() or Tstd == Tstd.max()")[["ASCII Name", "Country name EN", "Tmean", "Tstd"]]
 ```
 
 
@@ -1198,46 +1179,25 @@ df.query("Tstd == Tstd.min() or Tstd == Tstd.max()").sort_values(by=["Tstd"])
     <tr style="text-align: right;">
       <th></th>
       <th>ASCII Name</th>
-      <th>Country Code</th>
       <th>Country name EN</th>
-      <th>population</th>
-      <th>lat</th>
-      <th>lng</th>
-      <th>Continent Code</th>
       <th>Tmean</th>
       <th>Tstd</th>
-      <th>Tmax</th>
-      <th>Trange</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>122628</th>
-      <td>Jayapura</td>
-      <td>ID</td>
-      <td>Indonesia</td>
-      <td>134895</td>
-      <td>-2.53371</td>
-      <td>140.71813</td>
-      <td>AS</td>
-      <td>32.241667</td>
-      <td>0.317543</td>
-      <td>32.8</td>
-      <td>1.2</td>
-    </tr>
-    <tr>
       <th>49692</th>
       <td>Yakutsk</td>
-      <td>RU</td>
       <td>Russian Federation</td>
-      <td>235600</td>
-      <td>62.03389</td>
-      <td>129.73306</td>
-      <td>EU</td>
       <td>-2.883333</td>
       <td>22.694887</td>
-      <td>25.8</td>
-      <td>60.2</td>
+    </tr>
+    <tr>
+      <th>122628</th>
+      <td>Jayapura</td>
+      <td>Indonesia</td>
+      <td>32.241667</td>
+      <td>0.317543</td>
     </tr>
   </tbody>
 </table>
@@ -1245,7 +1205,7 @@ df.query("Tstd == Tstd.min() or Tstd == Tstd.max()").sort_values(by=["Tstd"])
 
 
 
-Yakutsk seems to be a lovely city to live in...
+Yakutsk seems a lovely city to live in...
 
 Get some cities to plot later:
 
@@ -1278,12 +1238,13 @@ for city in cities_to_plot:
         s=300,
         label=f'{city["ASCII Name"].iloc[0]} ({city["Country Code"].iloc[0]})',
     )
+plt.legend()
 plt.show()
 ```
 
 
     
-![png](README_files/README_72_0.png)
+![png](README_files/README_73_0.png)
     
 
 
@@ -1302,7 +1263,7 @@ plt.show()
 
 
     
-![png](README_files/README_75_0.png)
+![png](README_files/README_76_0.png)
     
 
 
@@ -1339,7 +1300,7 @@ print(df.groupby(["Continent Code"])["Country name EN"].value_counts())
     Name: Country name EN, dtype: int64
     
 
-Canada shortlisted cities were under the [2021 heat wave](https://en.wikipedia.org/wiki/2021_Western_North_America_heat_wave). No thanks.
+Canada shortlisted cities were under the [2021 heat wave](https://en.wikipedia.org/wiki/2021_Western_North_America_heat_wave). No thanks, I'll pass.
 
 
 ```python
@@ -1352,8 +1313,8 @@ df_nz = df.query("`Continent Code` == 'OC'")
 fig, (ax1, ax2) = plt.subplots(1, 2)
 world.boundary.plot(ax=ax1, edgecolor="black")
 world.boundary.plot(ax=ax2, edgecolor="black")
-sc1 = ax1.scatter(x=df_europe["lng"], y=df_europe["lat"], c=df_europe["Tmean"], s=100, marker="o", cmap="winter")
-sc2 = ax2.scatter(x=df_nz["lng"], y=df_nz["lat"], c=df_nz["Tmean"], s=100, marker="o", cmap="winter")
+sc1 = ax1.scatter(x=df_europe["lng"], y=df_europe["lat"], c=df_europe["Tmean"], s=100, cmap="winter")
+sc2 = ax2.scatter(x=df_nz["lng"], y=df_nz["lat"], c=df_nz["Tmean"], s=100, cmap="winter")
 ax1.set_xlim(-25, 5)
 ax1.set_ylim(40, 70)
 ax2.set_xlim(160, 180)
@@ -1367,7 +1328,7 @@ plt.show()
 
 
     
-![png](README_files/README_85_0.png)
+![png](README_files/README_86_0.png)
     
 
 
@@ -1409,7 +1370,7 @@ plt.show()
 
 
     
-![png](README_files/README_87_0.png)
+![png](README_files/README_88_0.png)
     
 
 
