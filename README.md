@@ -10,9 +10,9 @@ His analysis is interesting, well written and organized, but the data he used is
 
 Indeed, the [list he got from Wikipedia](https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature) only shows temperature data for major cities, so he might be missing his dream city without knowing it...
 
-Also, the list provides temperature data only, no information aboud wind speed and relative humidity, which are two important factors influcencing the perceived temperature.
+Moreover, the list only provides temperature data. There is no information about wind speed and relative humidity, which are two important factors influencing the perceived temperature.
 
-Let's try the same approach with an other dataset, and see if we can draw the same conclusions.
+Let's try the same approach with another dataset, and see if we can draw the same conclusions.
 
 Some imports for later:
 
@@ -30,7 +30,10 @@ from adjustText import adjust_text
 from geopandas import GeoDataFrame
 from meteostat import Normals, Point
 from tqdm.notebook import tqdm
+```
 
+
+```python
 Point.radius = 55_000  # Maximum radius for nearby stations in meters
 plt.rcParams["figure.facecolor"] = (1.0, 1.0, 1.0, 1)
 plt.rcParams["figure.figsize"] = [20, 10]
@@ -44,13 +47,13 @@ pd.set_option("display.max_rows", None)
 
 ## Get Data for Cities
 
-First, we start with getting a list of cities with the name, country, population and coordinates since we're gonna need latitude and longitude to retrieve historical weather data later on.
+First, we start with getting a list of cities with the name, country, population and coordinates since we're going to need latitude and longitude to retrieve historical weather data later on.
 
 This kind of data is fortunately quite easy to find, and more importantly, free.
 
 `dataset_1` is taken from [opendatasoft](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/table/?disjunctive.cou_name_en&sort=name). It contains information for 140,000 cities in the world.
 
-`dataset_2` is from the [World Cities Database](https://simplemaps.com/data/world-cities), contains the same kind of data than `dataset_1`.
+`dataset_2`, from the [World Cities Database](https://simplemaps.com/data/world-cities), contains the same kind of data than `dataset_1`.
 
 
 ```python
@@ -540,7 +543,7 @@ dataset_2.query("`country` == 'Japan' and city_ascii == 'Tokyo'")
 
 
 
-This time the difference is not negligible, there's a huge difference in terms of population size.
+This time, the difference is not negligible, there's a huge difference in terms of population size.
 
 Looks like the `dataset_1` considers the 23 wards that made up the boundaries of the historic city of Tokyo, while `dataset_2` considers the greater Tokyo metropolitan area, which is spread over 3 prefectures...
 
@@ -622,6 +625,8 @@ Yes, same issue: `dataset_1` considers the Manila city, while `dataset_2` gives 
 
 This explains why `dataset_2` was smaller, it merges cities of large urban areas.
 
+Last check with Singapore:
+
 
 ```python
 dataset_1.query("`Country Code` == 'SG' and `ASCII Name` == 'Singapore'")
@@ -694,9 +699,9 @@ dataset_2.query("`country` == 'Singapore'")
 
 
 
-Both dataset seem outdated since Singapore current population is 6M, for both the country and the city.
+Both datasets seem outdated since the current population of Singapore is 6M, for both the country and the city.
 
-Some data visualization would help to see if some cities/countries/continents are missing:
+Some data visualization would help us see if some cities/countries/continents are missing:
 
 
 ```python
@@ -706,7 +711,7 @@ plt.show()
 
 
     
-![png](README_files/README_39_0.png)
+![png](README_files/README_41_0.png)
     
 
 
@@ -722,11 +727,11 @@ plt.show()
 
 
     
-![png](README_files/README_42_0.png)
+![png](README_files/README_44_0.png)
     
 
 
-Since both dataset seem accurate enouth, from now on we'll just keep the first dataset.
+Since both datasets seem accurate enough, from now on we'll just keep the first dataset.
 
 
 ```python
@@ -806,7 +811,7 @@ df.head()
 
 
 
-We add a column for the continent code, might be useful later:
+We add a column for the continent code, which might be useful later:
 
 
 ```python
@@ -1020,16 +1025,17 @@ data
 
 ```python
 data.plot(y=["tavg", "tmin", "tmax"])
+plt.ylabel("Temperature °C")
 plt.show()
 ```
 
 
     
-![png](README_files/README_54_0.png)
+![png](README_files/README_56_0.png)
     
 
 
-Pretty big temperature variations over the year for Tokyo!
+Pretty big variations over the year for Tokyo!
 
 Having lived there for a few weeks, the `tmax` data is closer to ~~the~~ my perceived temperature than the `tavg`.
 
@@ -1117,11 +1123,11 @@ plt.show()
 
 
     
-![png](README_files/README_65_0.png)
+![png](README_files/README_67_0.png)
     
 
 
-Out of curiosity, get the extreme values in temperature:
+Out of curiosity, let's get the extreme values in temperature:
 
 
 ```python
@@ -1205,7 +1211,7 @@ df.query("Tstd == Tstd.min() or Tstd == Tstd.max()")[["ASCII Name", "Country nam
 
 
 
-Yakutsk seems a lovely city to live in...
+Yakutsk seems a like lovely city to live in...
 
 Get some cities to plot later:
 
@@ -1244,7 +1250,7 @@ plt.show()
 
 
     
-![png](README_files/README_73_0.png)
+![png](README_files/README_75_0.png)
     
 
 
@@ -1263,7 +1269,7 @@ plt.show()
 
 
     
-![png](README_files/README_76_0.png)
+![png](README_files/README_78_0.png)
     
 
 
@@ -1328,7 +1334,7 @@ plt.show()
 
 
     
-![png](README_files/README_86_0.png)
+![png](README_files/README_88_0.png)
     
 
 
@@ -1370,10 +1376,10 @@ plt.show()
 
 
     
-![png](README_files/README_88_0.png)
+![png](README_files/README_90_0.png)
     
 
 
 UK/IS/IE seem to have the "best" weather for me.
 
-Left for future work: Include pressure/wind to have the perceived temperature or heat index.
+Possible future steps: Include pressure/wind to have the perceived temperature or heat index.
