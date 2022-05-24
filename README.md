@@ -32,6 +32,11 @@ from tqdm.notebook import tqdm
 Point.radius = 55_000  # Maximum radius for nearby stations in meters
 plt.rcParams["figure.facecolor"] = (1.0, 1.0, 1.0, 1)
 plt.rcParams["figure.figsize"] = [20, 10]
+plt.rcParams["legend.fontsize"] = "x-large"
+plt.rcParams["axes.titlesize"] = "x-large"
+plt.rcParams["axes.labelsize"] = "x-large"
+plt.rcParams["xtick.labelsize"] = "x-large"
+plt.rcParams["ytick.labelsize"] = "x-large"
 pd.set_option("display.max_rows", None)
 ```
 
@@ -61,19 +66,6 @@ dataset_1.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -277,19 +269,6 @@ dataset_2.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -420,19 +399,6 @@ dataset_1.query("`Country Code` == 'GB' and `ASCII Name` == 'Portsmouth'")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -470,19 +436,6 @@ dataset_2.query("`country` == 'United Kingdom' and city_ascii == 'Portsmouth'")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -522,19 +475,6 @@ dataset_1.query("`Country Code` == 'JP' and `ASCII Name` == 'Tokyo'")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -572,19 +512,6 @@ dataset_2.query("`country` == 'Japan' and city_ascii == 'Tokyo'")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -626,19 +553,6 @@ dataset_1.query("`Country Code` == 'PH' and `ASCII Name` == 'Manila'")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -676,19 +590,6 @@ dataset_2.query("`country` == 'Philippines' and city_ascii == 'Manila'")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -728,19 +629,6 @@ dataset_1.query("`Country Code` == 'SG' and `ASCII Name` == 'Singapore'")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -778,19 +666,6 @@ dataset_2.query("`country` == 'Singapore'")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -865,19 +740,6 @@ df.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1003,19 +865,6 @@ data
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1230,7 +1079,6 @@ df["Trange"] = Trange
 ```
 
 
-      0%|          | 0/4684 [00:00<?, ?it/s]
 
 
 Some cities don't have any weather data at all, we drop them:
@@ -1282,19 +1130,6 @@ df.query("Tmean == Tmean.max() or Tmean == Tmean.min()")
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1358,19 +1193,6 @@ df.query("Tstd == Tstd.min() or Tstd == Tstd.max()").sort_values(by=["Tstd"])
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1456,7 +1278,6 @@ for city in cities_to_plot:
         s=300,
         label=f'{city["ASCII Name"].iloc[0]} ({city["Country Code"].iloc[0]})',
     )
-plt.legend(fontsize="x-large")
 plt.show()
 ```
 
@@ -1505,7 +1326,6 @@ Most shortlisted cities are in Europe:
 ```python
 print(df.shape)
 print(df.groupby(["Continent Code"])["Country name EN"].value_counts())
-df.sort_values(by=["Continent Code", "Country Code", "population"])
 ```
 
     (37, 11)
@@ -1518,565 +1338,6 @@ df.sort_values(by=["Continent Code", "Country Code", "population"])
     OC              New Zealand         2
     Name: Country name EN, dtype: int64
     
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ASCII Name</th>
-      <th>Country Code</th>
-      <th>Country name EN</th>
-      <th>population</th>
-      <th>lat</th>
-      <th>lng</th>
-      <th>Continent Code</th>
-      <th>Tmean</th>
-      <th>Tstd</th>
-      <th>Tmax</th>
-      <th>Trange</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>139736</th>
-      <td>Brest</td>
-      <td>FR</td>
-      <td>France</td>
-      <td>144899</td>
-      <td>48.39029</td>
-      <td>-4.48628</td>
-      <td>EU</td>
-      <td>15.083333</td>
-      <td>4.296475</td>
-      <td>20.9</td>
-      <td>11.3</td>
-    </tr>
-    <tr>
-      <th>7943</th>
-      <td>St Helens</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>102555</td>
-      <td>53.45000</td>
-      <td>-2.73333</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>88933</th>
-      <td>Oldham</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>104782</td>
-      <td>53.54051</td>
-      <td>-2.11830</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>88941</th>
-      <td>Newcastle under Lyme</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>129441</td>
-      <td>53.00000</td>
-      <td>-2.23333</td>
-      <td>EU</td>
-      <td>13.775000</td>
-      <td>5.187419</td>
-      <td>21.1</td>
-      <td>13.9</td>
-    </tr>
-    <tr>
-      <th>97609</th>
-      <td>Stockport</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>139052</td>
-      <td>53.40979</td>
-      <td>-2.15761</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>47617</th>
-      <td>Bolton</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>141331</td>
-      <td>53.58333</td>
-      <td>-2.43333</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>15294</th>
-      <td>Blackburn</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>146521</td>
-      <td>53.75000</td>
-      <td>-2.48333</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>43757</th>
-      <td>Dundee</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>147710</td>
-      <td>56.46913</td>
-      <td>-2.97489</td>
-      <td>EU</td>
-      <td>12.500000</td>
-      <td>4.683045</td>
-      <td>19.1</td>
-      <td>12.6</td>
-    </tr>
-    <tr>
-      <th>20159</th>
-      <td>Telford</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>147980</td>
-      <td>52.67659</td>
-      <td>-2.44926</td>
-      <td>EU</td>
-      <td>13.775000</td>
-      <td>5.187419</td>
-      <td>21.1</td>
-      <td>13.9</td>
-    </tr>
-    <tr>
-      <th>10176</th>
-      <td>Huddersfield</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>149017</td>
-      <td>53.64904</td>
-      <td>-1.78416</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>122006</th>
-      <td>Burnley</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>149422</td>
-      <td>53.80000</td>
-      <td>-2.23333</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>134381</th>
-      <td>Poole</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>150092</td>
-      <td>50.71429</td>
-      <td>-1.98458</td>
-      <td>EU</td>
-      <td>14.941667</td>
-      <td>5.123468</td>
-      <td>22.0</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>3879</th>
-      <td>Bournemouth</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>163600</td>
-      <td>50.72048</td>
-      <td>-1.87950</td>
-      <td>EU</td>
-      <td>14.941667</td>
-      <td>5.123468</td>
-      <td>22.0</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>113124</th>
-      <td>Warrington</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>165456</td>
-      <td>53.39254</td>
-      <td>-2.58024</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>134349</th>
-      <td>Walsall</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>172141</td>
-      <td>52.58528</td>
-      <td>-1.98396</td>
-      <td>EU</td>
-      <td>13.775000</td>
-      <td>5.187419</td>
-      <td>21.1</td>
-      <td>13.9</td>
-    </tr>
-    <tr>
-      <th>75597</th>
-      <td>Wigan</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>175405</td>
-      <td>53.54296</td>
-      <td>-2.63706</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>66901</th>
-      <td>Portsmouth</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>194150</td>
-      <td>50.79899</td>
-      <td>-1.09125</td>
-      <td>EU</td>
-      <td>14.941667</td>
-      <td>5.123468</td>
-      <td>22.0</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>101438</th>
-      <td>Aberdeen</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>196670</td>
-      <td>57.14369</td>
-      <td>-2.09814</td>
-      <td>EU</td>
-      <td>11.916667</td>
-      <td>4.469865</td>
-      <td>18.3</td>
-      <td>12.0</td>
-    </tr>
-    <tr>
-      <th>29555</th>
-      <td>Dudley</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>199059</td>
-      <td>52.50000</td>
-      <td>-2.08333</td>
-      <td>EU</td>
-      <td>13.775000</td>
-      <td>5.187419</td>
-      <td>21.1</td>
-      <td>13.9</td>
-    </tr>
-    <tr>
-      <th>139621</th>
-      <td>Southampton</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>246201</td>
-      <td>50.90395</td>
-      <td>-1.40428</td>
-      <td>EU</td>
-      <td>14.941667</td>
-      <td>5.123468</td>
-      <td>22.0</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>44180</th>
-      <td>Wolverhampton</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>252791</td>
-      <td>52.58547</td>
-      <td>-2.12296</td>
-      <td>EU</td>
-      <td>13.775000</td>
-      <td>5.187419</td>
-      <td>21.1</td>
-      <td>13.9</td>
-    </tr>
-    <tr>
-      <th>93752</th>
-      <td>Belfast</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>274770</td>
-      <td>54.59682</td>
-      <td>-5.92541</td>
-      <td>EU</td>
-      <td>12.750000</td>
-      <td>4.539223</td>
-      <td>19.0</td>
-      <td>12.1</td>
-    </tr>
-    <tr>
-      <th>128621</th>
-      <td>Preston</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>313332</td>
-      <td>53.76282</td>
-      <td>-2.70452</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>32353</th>
-      <td>Birkenhead</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>325264</td>
-      <td>53.39337</td>
-      <td>-3.01479</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>10486</th>
-      <td>Stoke-on-Trent</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>372775</td>
-      <td>53.00415</td>
-      <td>-2.18538</td>
-      <td>EU</td>
-      <td>13.775000</td>
-      <td>5.187419</td>
-      <td>21.1</td>
-      <td>13.9</td>
-    </tr>
-    <tr>
-      <th>10158</th>
-      <td>Manchester</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>395515</td>
-      <td>53.48095</td>
-      <td>-2.23743</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>97006</th>
-      <td>Edinburgh</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>464990</td>
-      <td>55.95206</td>
-      <td>-3.19648</td>
-      <td>EU</td>
-      <td>12.500000</td>
-      <td>4.683045</td>
-      <td>19.1</td>
-      <td>12.6</td>
-    </tr>
-    <tr>
-      <th>66890</th>
-      <td>Sheffield</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>685368</td>
-      <td>53.38297</td>
-      <td>-1.46590</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>8790</th>
-      <td>Liverpool</td>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>864122</td>
-      <td>53.41058</td>
-      <td>-2.97794</td>
-      <td>EU</td>
-      <td>13.658333</td>
-      <td>5.030174</td>
-      <td>20.8</td>
-      <td>13.6</td>
-    </tr>
-    <tr>
-      <th>75353</th>
-      <td>Cork</td>
-      <td>IE</td>
-      <td>Ireland</td>
-      <td>190384</td>
-      <td>51.89797</td>
-      <td>-8.47061</td>
-      <td>EU</td>
-      <td>13.058333</td>
-      <td>3.950019</td>
-      <td>18.6</td>
-      <td>10.3</td>
-    </tr>
-    <tr>
-      <th>4443</th>
-      <td>Dublin</td>
-      <td>IE</td>
-      <td>Ireland</td>
-      <td>1024027</td>
-      <td>53.33306</td>
-      <td>-6.24889</td>
-      <td>EU</td>
-      <td>13.425000</td>
-      <td>4.306892</td>
-      <td>19.5</td>
-      <td>11.3</td>
-    </tr>
-    <tr>
-      <th>97773</th>
-      <td>Reykjavik</td>
-      <td>IS</td>
-      <td>Iceland</td>
-      <td>118918</td>
-      <td>64.13548</td>
-      <td>-21.89541</td>
-      <td>EU</td>
-      <td>8.083333</td>
-      <td>4.461926</td>
-      <td>14.9</td>
-      <td>11.7</td>
-    </tr>
-    <tr>
-      <th>96487</th>
-      <td>Richmond</td>
-      <td>CA</td>
-      <td>Canada</td>
-      <td>198309</td>
-      <td>49.17003</td>
-      <td>-123.13683</td>
-      <td>NA</td>
-      <td>13.158333</td>
-      <td>5.160243</td>
-      <td>20.7</td>
-      <td>13.7</td>
-    </tr>
-    <tr>
-      <th>5168</th>
-      <td>Ladner</td>
-      <td>CA</td>
-      <td>Canada</td>
-      <td>200000</td>
-      <td>49.08938</td>
-      <td>-123.08241</td>
-      <td>NA</td>
-      <td>13.158333</td>
-      <td>5.160243</td>
-      <td>20.7</td>
-      <td>13.7</td>
-    </tr>
-    <tr>
-      <th>96500</th>
-      <td>Victoria</td>
-      <td>CA</td>
-      <td>Canada</td>
-      <td>289625</td>
-      <td>48.43590</td>
-      <td>-123.35155</td>
-      <td>NA</td>
-      <td>13.233333</td>
-      <td>4.645884</td>
-      <td>19.9</td>
-      <td>12.4</td>
-    </tr>
-    <tr>
-      <th>80587</th>
-      <td>Lower Hutt</td>
-      <td>NZ</td>
-      <td>New Zealand</td>
-      <td>101194</td>
-      <td>-41.21667</td>
-      <td>174.91667</td>
-      <td>OC</td>
-      <td>16.983333</td>
-      <td>3.100098</td>
-      <td>21.4</td>
-      <td>8.6</td>
-    </tr>
-    <tr>
-      <th>47064</th>
-      <td>Wellington</td>
-      <td>NZ</td>
-      <td>New Zealand</td>
-      <td>381900</td>
-      <td>-41.28664</td>
-      <td>174.77557</td>
-      <td>OC</td>
-      <td>16.983333</td>
-      <td>3.100098</td>
-      <td>21.4</td>
-      <td>8.6</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 Canada shortlisted cities were under the [2021 heat wave](https://en.wikipedia.org/wiki/2021_Western_North_America_heat_wave). No thanks.
 
@@ -2155,8 +1416,3 @@ plt.show()
 UK/IS/IE seem to have the "best" weather for me.
 
 Left for future work: Include pressure/wind to have the perceived temperature or heat index.
-
-
-```python
-
-```
