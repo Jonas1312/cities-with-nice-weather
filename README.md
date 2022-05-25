@@ -735,7 +735,9 @@ Since both datasets seem accurate enough, from now on we'll just keep the first 
 
 
 ```python
-df = dataset_1
+df = dataset_1.copy()
+del dataset_1
+del dataset_2
 print(df.shape)
 df.head()
 ```
@@ -1062,8 +1064,7 @@ Gathering weather data for 140,000 cities takes some time. We keep the biggest c
 
 
 ```python
-dataset_1.query("population >= 100000", inplace=True)
-dataset_2.query("population >= 100000", inplace=True)
+df.query("population >= 100000", inplace=True)
 ```
 
 We iterate over cities in the dataframe and get weather data. Not the most efficient way to do it but it works...:
