@@ -1212,7 +1212,7 @@ df.query("Tstd == Tstd.min() or Tstd == Tstd.max()")[["ASCII Name", "Country nam
 
 
 
-Yakutsk seems a like lovely city to live in...
+Yakutsk seems like a lovely city to live in...
 
 Get some cities to plot later:
 
