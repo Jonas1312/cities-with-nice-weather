@@ -1,6 +1,6 @@
 # Cities with Nice Weather v2.0
 
-I recently came accross this blog article ["Cities with Nice Weather"](https://jdonland.github.io/city_temperatures/index.html) by ***Jesse Onland***.
+I recently came accross this blog article ["Cities with Nice Weather"](https://web.archive.org/web/20220516040739/https://jdonland.github.io/city_temperatures/index.html) by ***Jesse Onland***.
 
 He explains his approach on how to find the best cities for him to live in, in terms of climate.
 
